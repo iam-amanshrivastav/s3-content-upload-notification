@@ -1,7 +1,7 @@
 # Complete Solution
 
 In the ever-evolving landscape of cloud automation, efficiency and real-time notifications are key. 
-I built a solution where every file uploaded to an Amazon S3 bucket triggers a Lambda function, which in turn sends an SNS notification to the file’s owner, providing details such as the bucket name and file name.
+I have built a solution where every file uploaded to an Amazon S3 bucket triggers a Lambda function, which in turn sends an SNS notification to the file’s owner, providing details such as the bucket name and file name.
 
 # How to Set Up SNS in AWS
 

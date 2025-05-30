@@ -1,0 +1,64 @@
+# Complete Solution
+
+In the ever-evolving landscape of cloud automation, efficiency and real-time notifications are key. 
+I built a solution where every file uploaded to an Amazon S3 bucket triggers a Lambda function, which in turn sends an SNS notification to the file’s owner, providing details such as the bucket name and file name.
+
+# How to Set Up SNS in AWS
+
+Open Amazon SNS → Click Create Topic.
+Choose Standard Topic.
+Name it (e.g., S3UploadNotifications).
+Click Create Topic.
+
+**SNS Topic is ready for notifications**
+
+**Subscribe to SNS Topic (Owner Notification)**
+
+# How to Subscribe to SNS
+
+Open SNS → Select S3UploadNotifications topic.
+Click Create Subscription.
+Choose Protocol (Email or SMS).
+Enter recipient’s email or phone number.
+
+# How to Set Up a Lambda Function
+
+Open AWS Lambda → Click Create Function.
+Choose Author from Scratch.
+Enter Function Name (e.g., S3UploadNotificationLambda).
+Select Runtime → Choose Python 3.x.
+Click Create Function.
+
+** Your Lambda function is now created ** 
+
+# Attach IAM Permissions
+
+Your Lambda function needs permissions to:
+**Read S3 events** 
+**Send SNS notifications**
+
+
+# How to Set Up an S3 Bucket in AWS Console
+Log in to AWS Console → Go to S3 Service.
+Click Create Bucket.
+Enter a Bucket Name (e.g., s3-event-trigger-project).
+Choose a Region close to your users (e.g., us-east-1).
+Keep Block Public Access enabled for security.
+Click Create Bucket.
+** Your S3 bucket is now ready **
+
+** Enable Event Notifications on S3 ** 
+
+# How to Configure S3 to Trigger an Event on Upload
+
+Open S3 → Select the Bucket you created.
+Go to Properties → Scroll down to Event Notifications.
+Click Create Event Notification.
+Provide a name (e.g., ObjectUploadedEvent).
+Under Event Types, select PUT (this triggers on new uploads).
+Set the Destination → Choose Lambda Function.
+Click Save changes.
+
+
+
+# Successfully tested end-to-end workflow
